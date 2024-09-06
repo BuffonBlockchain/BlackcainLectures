@@ -35,3 +35,17 @@ When you have completed the work in the `develop_surname` branch, you can create
 
 - **Work only in your branches**: Do not make changes to other students' branches or the main `master` branch.
 - **Keep your code clean**: Before pushing changes, make sure your code is clean and meets formatting standards.
+
+# Sample Hardhat Project
+
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/Lock.js
+```
