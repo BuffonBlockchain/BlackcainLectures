@@ -49,3 +49,13 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+
+# NFT
+
+```shell
+npx hardhat test ./test/GrandLithuanianDukesNFT.js
+npx hardhat ignition deploy ignition/modules/GrandLithuanianDukesNFT.js --network localhost
+npx hardhat ignition deploy ignition/modules/GrandLithuanianDukesNFT.js --network amoy
+npx hardhat ignition deploy ignition/modules/GrandLithuanianDukesNFT.js --network polygon
+
+```
