@@ -73,8 +73,7 @@ contract GrandLithuanianDukesNFT is ERC721URIStorage, Ownable {
      */
     function _mintSingleNFT(uint256 tokenId) internal onlyOwner {
         string memory tokenURI = string(abi.encodePacked(baseURI, nfts[tokenId].metadataFile)); // Construct the full URI for the metadata
-
-        _safeMint(msg.sender, tokenId); // Safely mint the new NFT to the owner's address
+        _safeMint(address(this), tokenId); // Mint the new NFT to the contract's address
         _setTokenURI(tokenId, tokenURI); // Set the metadata URI for the newly minted NFT
 
         tokenCounter += 1; // Increment the token counter
@@ -88,10 +87,10 @@ contract GrandLithuanianDukesNFT is ERC721URIStorage, Ownable {
     function purchaseNFT(uint256 tokenId) external payable {
         require(tokenId < nfts.length, "Invalid token ID"); // Check if the token ID exists
         require(msg.value == nfts[tokenId].price, "Incorrect native token value sent."); // Ensure the sent value matches the price of the token
-        require(ownerOf(tokenId) == owner(), "NFT already purchased."); // Ensure the token has not already been purchased (owned by the contract owner)
+        require(ownerOf(tokenId) == address(this), "NFT already purchased."); // Ensure the token has not already been purchased (owned by the contract owner)
 
         // Transfer NFT to the buyer
-        _safeTransfer(owner(), msg.sender, tokenId, ""); // Safely transfer the token from the contract owner to the buyer
+        _safeTransfer(address(this), msg.sender, tokenId, ""); // Safely transfer the token from the contract owner to the buyer
     }
 
     /**

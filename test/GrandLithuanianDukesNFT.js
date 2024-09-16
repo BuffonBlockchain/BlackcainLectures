@@ -12,7 +12,7 @@ describe("GrandLithuanianDukesNFT", function () {
     user1Address = await user1.getAddress();
 
     // Deploy contract with the base URI for IPFS folder
-    grandLithuanianDukesNFT = await GrandLithuanianDukesNFT.deploy("https://turquoise-fascinating-elephant-728.mypinata.cloud/ipfs/QmC9mmwv8MyPR7CEiJubNvPr83rkwyzZTaTfKSzZ6oi/");
+    grandLithuanianDukesNFT = await GrandLithuanianDukesNFT.deploy("https://turquoise-fascinating-elephant-728.mypinata.cloud/ipfs/QmcD9mmwWY8MyrPR7cEiJubNvpRr83rkwyzZaTfKSzz6oi/");
     await grandLithuanianDukesNFT.waitForDeployment();
   });
 
@@ -27,7 +27,7 @@ describe("GrandLithuanianDukesNFT", function () {
 
   it("should have the correct token URI for minted NFTs", async function () {
     const tokenId = 0; // First token
-    const expectedTokenURI = "https://turquoise-fascinating-elephant-728.mypinata.cloud/ipfs/QmC9mmwv8MyPR7CEiJubNvPr83rkwyzZTaTfKSzZ6oi/1_mindaugas.json";
+    const expectedTokenURI = "https://turquoise-fascinating-elephant-728.mypinata.cloud/ipfs/QmcD9mmwWY8MyrPR7cEiJubNvpRr83rkwyzZaTfKSzz6oi/1_mindaugas.json";
 
     expect(await grandLithuanianDukesNFT.tokenURI(tokenId)).to.equal(expectedTokenURI);
   });
@@ -39,7 +39,7 @@ describe("GrandLithuanianDukesNFT", function () {
     // User1 purchases NFT with the correct price
     await expect(grandLithuanianDukesNFT.connect(user1).purchaseNFT(tokenId, { value: tokenPrice }))
       .to.emit(grandLithuanianDukesNFT, "Transfer") // Expect a Transfer event to be emitted
-      .withArgs(owner.address, user1.address, tokenId);
+      .withArgs(grandLithuanianDukesNFT.target, user1.address, tokenId); // Use 'grandLithuanianDukesNFT.target' instead of 'owner.address'
 
     // Verify that the owner of the NFT is now user1
     const newOwner = await grandLithuanianDukesNFT.ownerOf(tokenId);
