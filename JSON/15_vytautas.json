@@ -1,0 +1,27 @@
+{
+  "name": "Vytautas the Great",
+  "description": "Expanded the Grand Duchy to its maximum territorial extent.",
+  "image": "https://turquoise-fascinating-elephant-728.mypinata.cloud/ipfs/QmbDDcLHMaKW8VJLbQ2uXeEMbuWaHduUuHmDzFqKBBJ43Y",
+  "attributes": [
+    {
+      "trait_type": "Name in Original",
+      "value": "Vytautas Didysis"
+    },
+    {
+      "trait_type": "Name in Second Original",
+      "value": "Вітаўт Вялікі"
+    },
+    {
+      "trait_type": "Reign Years",
+      "value": "1392-1430"
+    },
+    {
+      "trait_type": "Life Years",
+      "value": "1350-1430"
+    },
+    {
+      "trait_type": "Achievements",
+      "value": "Expanded the Grand Duchy to its maximum territorial extent."
+    }
+  ]
+}
