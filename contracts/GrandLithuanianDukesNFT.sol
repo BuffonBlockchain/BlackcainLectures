@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.24;
 
 // Importing OpenZeppelin's ERC721 implementation and Ownable contract for managing ownership and access control
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";

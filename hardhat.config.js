@@ -13,5 +13,10 @@ module.exports = {
       chainId: 80002,
       accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
+    polygon: {
+      url: "https://polygon-rpc.com",
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
+      chainId: 137,
+    },
   },
 };
